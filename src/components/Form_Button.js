@@ -1,7 +1,7 @@
 
-const Form_Button = () => {
+const Form_Button = ({text}) => {
     return (
-        <button>+Agregar</button>
+        <button>{text}</button>
     )
 }
 

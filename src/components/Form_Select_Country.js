@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
-const Form_Select_Country = () => {
+const Form_Select_Country = ({id,onChange}) => {
 
     const [countries,setCountries] = useState([])
 
@@ -18,8 +18,9 @@ const Form_Select_Country = () => {
     },[])
     
     return (
-        <select>
-           {countries.map(country => (<option value={country.name}>{country.name}</option>
+        <select id={id} onChange={onChange} >
+            <option defaultValue>-Seleccione un País-</option>
+           {countries.map(country => (<option key={country.name} value={country.name}>{country.name}</option>
                 ))}
         </select>
     )

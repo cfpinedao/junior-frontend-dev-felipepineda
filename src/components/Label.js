@@ -1,9 +1,8 @@
 
-import PropTypes from 'prop-types'
 
 const Form_Label = ({text}) => {
     return (
-        <h2>{text}</h2>
+        <label className="lblstyle">{text}</label>
     )
 }
 

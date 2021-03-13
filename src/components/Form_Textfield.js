@@ -1,8 +1,12 @@
 
 
-const Form_Textfield = ({pholder}) => {
+const Form_Textfield = ({pholder, id, onChange,type, errors}) => {
     return (
-        <input type="text" placeholder={pholder}></input>
+        <div>
+            <input type={type} className="inputstyle"id={id} onChange={onChange} placeholder={pholder} />
+            {errors && <p>{errors} holi</p>}
+        </div>
+        
     )
 }
 

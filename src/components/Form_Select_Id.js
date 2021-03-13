@@ -1,11 +1,23 @@
+import React, {useState} from 'react'
 
-const Form_Select_Id = ({text1,text2,text3}) => {
+const Form_Select_Id = ({id,onChange}) => {
+
+    const [value,setValue]= useState()
+    
+    let listId=[{
+        itemId:'Cédula de Ciudadania'
+    },{
+        itemId:'Cédula de Extranjería'
+    },{
+        itemId:'Pasaporte'
+    }];
+
     return (
         <div>
-            <select>
-                <option value={text1}>{text1}</option>
-                <option value={text2}>{text2}</option>
-                <option value={text3}>{text3}</option>
+            <select id={id} value={value} onChange={onChange}>
+                <option defaultValue>-Tipo de Documento-</option>
+                {listId.map(item => (<option key={item.itemId} value={onChange.itemId}>{item.itemId}</option>
+                ))}
 
             </select>
         </div>
